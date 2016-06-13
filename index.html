@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>RASPIED | CS Hons Project 2016</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="#title">
+                        RASPIED
+                    </a>
+                </li>
+                <li>
+                    <a href="#introduction">Introduction</a>
+                </li>
+                <li>
+                    <a href="#team_members">Team Members</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <!-- Title -->
+                <div id="title" class="row" style="background-image:url(img/bg.png)">
+                    <div class="col-lg-8 col-lg-offset-2" style="color:white; padding:50px">
+                        <h1>RASPIED</h1>
+                        <h4>An Educational Robot Platform for the UCT CS1 Extended Degree Program</h4>
+                    </div>
+                </div>
+
+                <!-- Introduction -->
+                <div id="introduction" class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+
+                        <hr />
+                        <h3>Introduction</h3>
+                        <p>
+                            The use of robots as educational tools has gained traction
+                            in recent years with numerous studies being conducted in this area.
+                            Many studies have found that teaching Computer Science within
+                            a certain context can greatly improve students’ learning
+                            experience. In particular, teaching Computer Science within
+                            the context of robotics has been shown to be beneficial
+                            in many cases. The use of robots as educational tools is
+                            also supported by the Constructionism theory of learning.
+                            <br />
+
+                            While the use of robots as educational tools has been shown
+                            to be successful, prohibitively high costs still serve as a
+                            significant barrier to entry. Some of the difficulties faced by
+                            robot-aided curricula include: prohibitively high cost of
+                            hardware, appropriate choice of features to support the
+                            curriculum, and sufficient access to the robot. This project
+                            will design and implement a complete educational robot platform
+                            using only easily accessible, commercially available hardware
+                            and software. This platform will be built for use in the UCT CS1
+                            extended degree Computer Science course.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Team Members -->
+                <div id="team_members" class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <hr />
+                        <h3>Team Members</h3>
+
+                        <p>
+                            The team consists of the following three Computer Science Honours students at the
+                            University of Cape Town:
+                        </p>
+                        <ul>
+                            <li>Jeremy Coupland - <i>cpljer001</i></li>
+                            <li>Josh di Bona - <i>dbnjos001</i></li>
+                            <li>Muhummad Patel - <i>ptlmuh006</i></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- Use button below to toggle the menu -->
+    <!-- <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a> -->
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+
+</body>
+
+</html>
