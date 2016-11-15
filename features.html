@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Raspied|Features</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+
+<body>
+  <nav class="nav-extended light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="index.html" class="brand-logo">RASPIED</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="robot.html">Robot</a></li>
+        <li><a href="#">Features</a></li>
+        <li><a href="web_app.html">Web App</a></li>
+        <li><a href="downloads.html">Downloads</a></li>
+        <li><a href="#footer-contact">Contact Us</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="side-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="robot.html">Robot</a></li>
+        <li><a href="#">Features</a></li>
+        <li><a href="web_app.html">Web App</a></li>
+        <li><a href="downloads.html">Downloads</a></li>
+        <li><a href="#footer-contact">Contact Us</a></li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+
+
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <div class="card content">
+        <div class="container">
+          <div class="row">
+            <h4 class="header col s12 light">Robot Features and Feature-Concept Mappings - Jeremy Coupland</h4>
+            <br>
+
+            <h5 class="header col s12 light">Introduction</h5>
+            <p>
+              Four features have been added to the robot: an infrared (IR) sensor, an ultrasonic (Us) sensor, a camera, and three different coloured LED lights. These features were selected to enhance the capabilities of the robot. The IR sensor can be used to detect whether there is an obstacle within a short range in front of the robot. The US sensor can be used to calculate the distance to the nearest obstacle in front of the robot in centimeters. The camera can be used to detect the colour of the block underneath the robot. The LEDs can be switched on and off, or flashed independently. The code for these features is all contained within a python features module, and can be accessed via the core robot module.
+            </p>
+            <hr>
+
+            <h5 class="header col s12 light">Background</h5>
+            <p>
+              There have been several studies that have tested a robot-based Computer Science curriculum on a large number of students. One such study [1] at the Georgia Institute of Technology and Bryn Mawr College involved around 1500 students, 144 of which were taught using the robot-based curriculum. Overall, it was found that students who were taught using the robot performed better than those who were not.
+            </p>
+            <p>
+              Another large scale study [2] was performed in 2001, during which 948 students were involved, and 175 of them were taught using a robot-based curriculum. The study recorded both quantitative and qualitative results from students. They found that with respect to results, the robotics students performed worse than non-robotics students in every instance where a difference was detected. Qualitative results identified that the biggest disadvantage of the robot-based curriculum was that students did not have access to the robot at all times, as the robots were required to remain in the labs.
+            </p>
+            <hr>
+
+            <h5 class="header col s12 light">Research Question</h5>
+            <p>
+              Since there is no formal evaluation method for measuring the qualitative feedback of the students after the completion of the courses, educators have chosen to create their own questionnaires or surveys, or simply interview the students and make notes on their experiences. In previous studies, these results have been presented as "course ratings increased" or "robot student ratings were lower than those of non-robot students". While these results do provide some useful information, they provide little insight as to what worked well and what did not, or how to improve the course so that it would be better received by students. With this is mind, the following research question has been formulated:
+            </p>
+            <blockquote>
+              Given a selection of cheaply available features to be used on a CS educational robot, which ones would students be most motivated to use, and which ones do students think would best help them understand the topic? Would these features be the same?
+            </blockquote>
+            <p>
+              This research question will help provide insight to future educators who may be interested in creating a robot-based curriculum. The educators will be able to tell which features work well as well as allowing them to find a balance between the cost and functionality of the robot.
+            </p>
+            <hr>
+
+            <h5 class="header col s12 light">Testing Methodology</h5>
+            <p>
+              Testing was done is two phases. In both phases, the participants (two Masters and five Honours students) were required to complete a set of tasks, and fill out some surveys. Overall, there were four Computer Science concepts that were tested: conditionals, for loops, while loops, and functions. Each concept had a set of four tasks, with each task making specific use of one of the robots features. In each testing session, the participants were required to complete one concept's set of tasks. The complete set of tasks for all concepts can be found on the <a href="downloads.html">downloads page</a>. Once complete, the participants were required to fill out a usability survey, as well as a survey ranking how well each feature demonstrated the concept. After the first phase of testing was complete, feedback from the usability surveys was implemented. The second phase of testing then took the same form as the first, with students completing a different concept's set of tasks than the previous phase. The usability survey and the feature survey can be found on the <a href="downloads.html">downloads page</a>.
+            </p>
+            <hr>
+
+            <h5 class="header col s12 light">Results</h5>
+            <p>
+              It was found that the usability score of the system, which was rated highly in the first phase, did still have a slight increase in the second phase of testing. For each Computer Science concept that was tested, one or two optimal features were identified. For Conditionals, the infrared sensor and the ultrasonic sensor were rated equally, but when asked which feature the participants felt best demonstrated the concept, and which feature they most enjoyed using, the infrared sensor was rated higher. For the concept of For Loops, the camera and the infrared sensor were both rated highly, but again, students felt that the infrared sensor was more enjoyable to use, and demonstrated the concept better. While Loops showed that the infrared sensor was the highest rated feature, and that most participants found it to be the most enjoyable to use. The feature that best demonstrated the concept, however, was shown to be the LEDs. For the concept of Functions, the ultrasonic sensor and camera were rated equally, but participants enjoyed using the ultrasonic sensor more, and found it better demonstrated the concept.
+            </p>
+            <hr>
+
+            <h5 class="header col s12 light">Conclusions</h5>
+            <p>
+              Overall, conclusions can be drawn as to which feature can best teach each concept. In most cases, the optimal feature would be the infrared sensor. When questioned about their choices, participants explained that they valued the simplicity of the feature. The infrared sensor is also very inexpensive relative to the other features, making it an ideal candidate for teaching the concepts of Conditionals, For Loops, and While Loops. For the last remaining concept of Functions, the ultrasonic sensor would be the better candidate. There are two reason to support this: the first being that the camera is less reliable than the ultrasonic sensor. In uncertain, poor lighting conditions, the camera could incorrectly identify the colour of the block underneath the robot. The second reason is that the ultrasonic sensor is significantly cheaper than the camera, making it a more cost effective choice.
+            </p>
+            <hr>
+
+            <h5 class="header col s12 light">Related Downloads</h5>
+            <ul>
+              <li><a href="https://github.com/Ruenzic/HonoursProject">Robot Controller Code</a></li>
+              <li><a href="files/LiteratureReview_Jeremy.pdf" target="_blank">Literature review: Jeremy</a></li>
+              <li><a href="files/Testing_UserTasks.pdf" target="_blank">User Testing Tasks</a></li>
+              <li><a href="files/Survey_Jeremy.pdf" target="_blank">Survey: Robot features</a></li>
+              <!-- TODO: replace with link to actual final paper -->
+              <li><a href="#" target="_blank">Final paper: Robot features - Jeremy</a></li>
+            </ul>
+            <hr>
+
+            <h5 class="header col s12 light">References</h5>
+            <ul class="references-list">
+              <li>
+                [1] - Summet, J., Kumar, D., O'Hara, K., Walker, D., Ni, L., Blank, D., &amp; Balch, T. (2009, March). Personalizing CS1 with Robots. In ACM SIGCSE Bulletin (Vol. 41, No. 1, pp. 433-437). ACM.
+              </li>
+              <li>
+                [2] - Fagin, B. S., Merkle, L. D., &amp; Eggers, T. W. (2001). Teaching Computer Science with Robotics Using Ada/Mindstorms 2.0. ACM SIG Ada Letters, 21(4), 73-78.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <br><br>
+    </div>
+  </div>
+
+
+  <div class="container">
+    <div class="section">
+
+    </div>
+  </div>
+
+  <footer class="page-footer orange">
+    <div class="container">
+      <div id="footer-contact" class="row">
+        <div class="col l4 s12">
+          <h6 class="white-text">Team Members:</h6>
+          <p class="white-text">
+            Jeremy Coupland: cpljer001@myuct.ac.za <br>
+            Josh Di Bona: dbnjos001@myuct.ac.za <br>
+            Muhummad Patel: ptlmuh006@myuct.ac.za <br>
+          </p>
+        </div>
+
+        <div class="col l4 s12">
+          <h6 class="white-text">Supervisor:</h6>
+          <p class="white-text">
+            Mr. Gary Stewart: gstewart@cs.uct.ac.za <br>
+          </p>
+        </div>
+
+        <div class="col l2 s6">
+          <img src="img/dept_logo.png" alt="" />
+        </div>
+        <div class="col l2 s6">
+          <img src="img/uct_logo.png" alt="" />
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-copyright">
+      <div class="container">
+        Made with <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+
+  </body>
+</html>
