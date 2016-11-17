@@ -61,6 +61,17 @@ img.screenshot {
   width: 100%;
 }
 
+a.fig {
+  text-decoration: none;
+  color: black;
+}
+
+a.fig > div.caption {
+  text-align: center;
+  font-size: smaller;
+  padding-bottom: 1rem;
+}
+
 hr{
   border: none;
   height: 1px;

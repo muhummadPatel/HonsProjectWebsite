@@ -46,16 +46,7 @@
 
             <h5 class="header col s12 light">Introduction</h5>
             <p>
-              Four features have been added to the robot: an infrared (IR) sensor, an ultrasonic (Us) sensor, a camera, and three different coloured LED lights. These features were selected to enhance the capabilities of the robot. The IR sensor can be used to detect whether there is an obstacle within a short range in front of the robot. The US sensor can be used to calculate the distance to the nearest obstacle in front of the robot in centimeters. The camera can be used to detect the colour of the block underneath the robot. The LEDs can be switched on and off, or flashed independently. The code for these features is all contained within a python features module, and can be accessed via the core robot module.
-            </p>
-            <hr>
-
-            <h5 class="header col s12 light">Background</h5>
-            <p>
-              There have been several studies that have tested a robot-based Computer Science curriculum on a large number of students. One such study [1] at the Georgia Institute of Technology and Bryn Mawr College involved around 1500 students, 144 of which were taught using the robot-based curriculum. Overall, it was found that students who were taught using the robot performed better than those who were not.
-            </p>
-            <p>
-              Another large scale study [2] was performed in 2001, during which 948 students were involved, and 175 of them were taught using a robot-based curriculum. The study recorded both quantitative and qualitative results from students. They found that with respect to results, the robotics students performed worse than non-robotics students in every instance where a difference was detected. Qualitative results identified that the biggest disadvantage of the robot-based curriculum was that students did not have access to the robot at all times, as the robots were required to remain in the labs.
+              Four features have been added to enhance the capabilities of the robot: an infrared (IR) sensor, an ultrasonic (Us) sensor, a camera, and three different coloured LED lights. The IR sensor detects whether there is an obstacles within a short range. The US sensor calculates the distance to the nearest obstacle. The camera can be used to detect the colour of the block underneath the robot. The LEDs can be switched on and off, or flashed independently. The code for these features is all contained within a Python features module, and can be accessed via the core robot module.
             </p>
             <hr>
 
@@ -71,21 +62,21 @@
             </p>
             <hr>
 
-            <h5 class="header col s12 light">Testing Methodology</h5>
-            <p>
-              Testing was done is two phases. In both phases, the participants (two Masters and five Honours students) were required to complete a set of tasks, and fill out some surveys. Overall, there were four Computer Science concepts that were tested: conditionals, for loops, while loops, and functions. Each concept had a set of four tasks, with each task making specific use of one of the robots features. In each testing session, the participants were required to complete one concept's set of tasks. The complete set of tasks for all concepts can be found on the <a href="downloads.html">downloads page</a>. Once complete, the participants were required to fill out a usability survey, as well as a survey ranking how well each feature demonstrated the concept. After the first phase of testing was complete, feedback from the usability surveys was implemented. The second phase of testing then took the same form as the first, with students completing a different concept's set of tasks than the previous phase. The usability survey and the feature survey can be found on the <a href="downloads.html">downloads page</a>.
-            </p>
-            <hr>
-
             <h5 class="header col s12 light">Results</h5>
             <p>
-              It was found that the usability score of the system, which was rated highly in the first phase, did still have a slight increase in the second phase of testing. For each Computer Science concept that was tested, one or two optimal features were identified. For Conditionals, the infrared sensor and the ultrasonic sensor were rated equally, but when asked which feature the participants felt best demonstrated the concept, and which feature they most enjoyed using, the infrared sensor was rated higher. For the concept of For Loops, the camera and the infrared sensor were both rated highly, but again, students felt that the infrared sensor was more enjoyable to use, and demonstrated the concept better. While Loops showed that the infrared sensor was the highest rated feature, and that most participants found it to be the most enjoyable to use. The feature that best demonstrated the concept, however, was shown to be the LEDs. For the concept of Functions, the ultrasonic sensor and camera were rated equally, but participants enjoyed using the ultrasonic sensor more, and found it better demonstrated the concept.
+              For each Computer Science concept that was tested, one or two optimal features were identified (see graphs below). For Conditionals, the infrared sensor and the ultrasonic sensor were rated equally, but when asked which feature the participants felt best demonstrated the concept, and which feature they most enjoyed using, the infrared sensor was rated higher. For the concept of For Loops, the camera and the infrared sensor were both rated highly, but again, students felt that the infrared sensor was more enjoyable to use, and demonstrated the concept better. While Loops showed that the infrared sensor was the highest rated feature, and that most participants found it to be the most enjoyable to use. The feature that best demonstrated the concept, however, was shown to be the LEDs. For the concept of Functions, the ultrasonic sensor and camera were rated equally, but participants enjoyed using the ultrasonic sensor more, and found it better demonstrated the concept.
             </p>
-            <hr>
+          </div>
+          <a class="fig">
+            <img src="img/features_graphs.png" alt=""/>
+            <div class="caption">Figure 1: Concept-feature mapping results.</div>
+          </a>
 
+          <div class="row">
+            <hr>
             <h5 class="header col s12 light">Conclusions</h5>
             <p>
-              Overall, conclusions can be drawn as to which feature can best teach each concept. In most cases, the optimal feature would be the infrared sensor. When questioned about their choices, participants explained that they valued the simplicity of the feature. The infrared sensor is also very inexpensive relative to the other features, making it an ideal candidate for teaching the concepts of Conditionals, For Loops, and While Loops. For the last remaining concept of Functions, the ultrasonic sensor would be the better candidate. There are two reason to support this: the first being that the camera is less reliable than the ultrasonic sensor. In uncertain, poor lighting conditions, the camera could incorrectly identify the colour of the block underneath the robot. The second reason is that the ultrasonic sensor is significantly cheaper than the camera, making it a more cost effective choice.
+              Overall, conclusions can be drawn as to which feature can best teach each concept. In most cases, the optimal feature would be the infrared sensor. When questioned about their choices, participants explained that they valued the simplicity of the feature. The infrared sensor is also very inexpensive relative to the other features, making it an ideal candidate for teaching the concepts of Conditionals, For Loops, and While Loops. For the last remaining concept of Functions, the ultrasonic sensor would be the better candidate. There are two reasons to support this: the first being that the camera is less reliable than the ultrasonic sensor. In uncertain, poor lighting conditions, the camera could incorrectly identify the colour of the block underneath the robot. The second reason is that the ultrasonic sensor is significantly cheaper than the camera, making it a more cost effective choice.
             </p>
             <hr>
 
@@ -97,17 +88,6 @@
               <li><a href="files/Survey_Jeremy.pdf" target="_blank">Survey: Robot features</a></li>
               <!-- TODO: replace with link to actual final paper -->
               <li><a href="#" target="_blank">Final paper: Robot features - Jeremy</a></li>
-            </ul>
-            <hr>
-
-            <h5 class="header col s12 light">References</h5>
-            <ul class="references-list">
-              <li>
-                [1] - Summet, J., Kumar, D., O'Hara, K., Walker, D., Ni, L., Blank, D., &amp; Balch, T. (2009, March). Personalizing CS1 with Robots. In ACM SIGCSE Bulletin (Vol. 41, No. 1, pp. 433-437). ACM.
-              </li>
-              <li>
-                [2] - Fagin, B. S., Merkle, L. D., &amp; Eggers, T. W. (2001). Teaching Computer Science with Robotics Using Ada/Mindstorms 2.0. ACM SIG Ada Letters, 21(4), 73-78.
-              </li>
             </ul>
           </div>
         </div>

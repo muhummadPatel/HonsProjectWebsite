@@ -46,26 +46,22 @@
 
             <h5 class="header col s12 light">Introduction</h5>
             <p>
-              The software engineering component of the RASPIED project invovled the design, implementation, and evaluation of the controlling web app. This web app facilitates student interactions with the robot by providing a live video stream of the robot and allowing students to write and upload code to the robot. Access to the robot is managed by requiring students to book time slots during which they are allowed to upload and run code on the robot. This booking functionality facilitates the shared access to the robot and ensures that only a single student has control over the robot at any given time.
-            </p>
-            <hr>
+              The software engineering component of the RASPIED project invovled the design, implementation, and evaluation of the controlling web app. This web app provides a live video stream of the robot and allows students to write and upload code to the robot. The web app also controls access to the robot via a booking system.
 
-            <h5 class="header col s12 light">Background</h5>
-            <p>
-              Much of the early work using robots in education made use of the Lego Mindstorms platform. More recent work has shifted to focus more on cheaper, custom built robot hardware and modified pre-built robots. This shift could possibly be attributed to the introduction of low-cost, hackable, compputing devices like the Arduino, and Raspberry Pi. Studies using the cheaper custom built solutions have shown similar success rates compared to studies using the more expensive Lego Mindstorms platform.
-            </p>
-            <p>
-              The use of robots in Computer Science education has been shown to be effective. One of the key determinants of success is sufficient access to the robot for students[1]. This project aims to improve access to the robot whilst still keeping costs low by allowing shared access to a single robot through a controlling web app. Students are then able to program and debug their solutions off-campus without needing to buy their own robot.
+              The use of robots in Computer Science education has been shown to be effective. One of the key determinants of success is sufficient access to the robot for students. This project aims to improve access to the robot whilst still keeping costs low by allowing shared access to a single robot through a controlling web app. Students are then able to program and debug their solutions off-campus without needing to buy their own robot.
             </p>
             <hr>
 
             <h5 class="header col s12 light">System Architecture</h5>
             <p>
-              There are three major components to the web app, viz. the website itself (consisting of the back-end and front-end), the robot, and the video stream. The website was built using Python Django, JavaScript, jQuery, and AJAX. The robot was built using a Raspberry Pi and exposes a simple Python API to control it as described on the <a href="robot.html">robot page</a>. Lastly, the live video stream was implemented using a Raspberry Pi (with an attached Raspberry Pi camera) and a node.js server. The web app makes use of the other two components and presents a unified UI to the student as shown in the architecture diagram below.
+              There are three major components to the web app, viz. the website itself (consisting of the back-end and front-end), the robot, and the video stream. The website was built using Python Django, JavaScript, jQuery, and AJAX. The live video stream was implemented using a Raspberry Pi (with an attached Raspberry Pi camera) and a node.js server. The architecture diagram below shows the overall structure of the system.
             </p>
-            <img src="img/webapp_architecture.png" alt="" />
+            <a class="fig">
+              <img src="img/webapp_architecture.png" alt="" style="max-width: 50%"/>
+              <div class="caption">Figure 1: Architecture diagram showing overall structure of the system.</div>
+            </a>
             <p>
-              The web app back-end communicates with the robot over SSH and serves as a mediator for all interactions between the client and the robot. This allows us to manage/control access to the robot. Client interactions with the robot (through the web app) are carried out over a WebSocket connection (implemented on the server using Django Channels). This allows for real-time feedback, such as the result of print statements, to be sent to the user.
+              The web app back-end communicates with the robot over SSH and serves as a mediator for all interactions between the client and the robot. This allows us to manage/control access to the robot. Client interactions with the robot are carried out over a WebSocket connection so that code output can be relayed to the user in realtime.
             </p>
             <hr>
 
@@ -82,55 +78,43 @@
 
             <h5 class="header col s12 light">Feature: Code Editor</h5>
             <p>
-              The code editor is implemented using the Ace Editor JavaScript library. It has been styled to resemble students’ current IDE (Wing IDE) in order to provide them with a familiar environment in which to write their code.
+              The code editor is implemented using the Ace Editor JavaScript library. It has been styled to resemble students’ current IDE (Wing IDE) in order to provide them with a familiar environment in which to write their code. Five action buttons have been placed above the editor to allow for quick access to common actions such as running and saving scripts.
             </p>
-            <p>
-              Five action buttons have been placed above the editor much like in the students’ current IDE. The ’New Script’ button allows students to quickly reset the code editor to the default state with the boilerplate code. This is roughly equivalent to the ’File > New Python Script’ action in most Python IDE’s. The ’RASPIED Wiki’ button opens the documentation for the robot’s Python API in a new tab. The ’Open Script’ button allows users to open a script that they have saved on their computer. The ’Save Script’ button downloads the contents of the code editor as a Python file. When this button is clicked the students are presented with a prompt where they can specify the name to be used for the downloaded file. Lastly, the ’Run’ button will upload the user’s script from the code editor to the robot and run it. The ’Run’ button also automatically takes the user to the live video stream /output tab.
-            </p>
-            <img class="screenshot" src="img/webapp_editor.png" alt="" />
-            <br>
+            <a class="fig">
+              <img src="img/webapp_editor.png" alt="" class="screenshot"/>
+              <div class="caption">Figure 2: Screenshot showing the code editor provided in the webapp.</div>
+            </a>
             <hr>
 
             <h5 class="header col s12 light">Feature: Running Code on the Robot</h5>
             <p>
-              Students can upload their code to the robot and run it with a single click. When the user clicks the Run button, their code is sent to the web app over a WebSocket connection. The web app then verifies that the user is allowed (is authorised and has the current booking) to upload code to the robot and opens an SSH session with the robot. The web app opens a Python shell on the robot (over the SSH session) and transmits the submitted code line-by-line. Any output from the robot is collected and sent back to the client over the open WebSocket.
+              Students can upload their code to the robot and run it with a single click. When the user clicks the Run button, their code is sent to the web app over a WebSocket connection. The run request is validated and executed and a§ny output from the robot is collected and sent back to the client over the open WebSocket.
             </p>
             <hr>
 
             <h5 class="header col s12 light">Feature: Live Video Stream</h5>
             <p>
-              The web app presents students with a live video stream of the robot so that they can see their code running on the robot in real-time. This video stream is captured using a Raspberry Pi camera and is encoded by the connected Raspberry Pi using jsmpeg. This set-up was packaged as a standalone unit requiring only a stable internet connection and a power source. The screenshot below shows the output tab with the live video stream of the robot with the output terminal below it.
+              The web app presents students with a live video stream of the robot so that they can see their code running on the robot in real-time. This video stream is captured using a Raspberry Pi camera and is encoded by the connected Raspberry Pi using jsmpeg. The screenshot below shows the output tab with the live video stream of the robot with the output terminal below it.
             </p>
-            <img class="screenshot" src="img/webapp_video.png" alt="" />
-            <br>
+            <a class="fig">
+              <img src="img/webapp_video.png" alt="" class="screenshot"/>
+              <div class="caption">Figure 3: Screenshot showing the video stream of the robot.</div>
+            </a>
             <hr>
 
             <h5 class="header col s12 light">Feature: Booking System</h5>
             <p>
               In order to facilitate shared access to the single robot, the web app uses a booking system whereby students are required to book/reserve the robot before uploading and running their code on it. On the client side, the ’Run’ button is disabled when the student does not have the current booking, and on the server side, we check that the user trying to upload and run code on the robot has the current booking. Trying to upload code to the robot without having the current booking will result in a ’robot access denied’ error message being returned to the user. The screenshot below shows the bookings page including a ist of the user's current bookings (with the current booking highlighted) and the new booking form.
             </p>
-            <img class="screenshot" src="img/webapp_bookings.png" alt="" />
-            <br>
+            <a class="fig">
+              <img src="img/webapp_bookings.png" alt="" class="screenshot"/>
+              <div class="caption">Figure 4: Screenshot showing the webapp bookings page.</div>
+            </a>
             <hr>
 
             <h5 class="header col s12 light">Evaluation</h5>
             <p>
-              The web app developed for this project has been evaluated based on its usability and whether or not it meets the initial requirements. The System Usability Scale(SUS)[2] was used to determine the usability of the web app. The SUS is a survey consisting of ten simple questions (using a Likert scale) that is presented to users after they have been allowed to interact with the system.
-            </p>
-            <p>
-              Two iterations of usability testing were conducted with both iterations following the same procedure. In each testing session, the users were provided with a set of 4 programming tasks. Users were then required to register on the web app and use it to program the robot to complete the required tasks. The specific tasks are discussed in further detail on the <a href="features.html">features page</a>.
-            </p>
-            <p>
-              The participants chosen to test the usability of the web app were all Computer Science(CS) students. For the first round of testing, a group of seven participants, consisting of five CS honours students and two CS masters students, were surveyed. Unfortunately, one of the masters students was unable to participate in the second round of testing. All selected participants had, in some capacity, served as tutors and/or teaching assistants for first year Computer Science courses.
-            </p>
-            <hr>
-
-            <h5 class="header col s12 light">Findings and Results</h5>
-            <p>
-              Based on consultations with the CSC1010H course convenor and product owner,  the final web app produced in this project has successfully met the core requirements laid out in the initial plan. The web app provides students with an editor to write and edit their Python code. It also allows them to upload this code to the robot and run it. A live video stream of the robot is also provided so that students can see how the robot behaves when running their code. The web app successfully manages shared access to the robot by only allowing authorised students to register and requiring students to book sessions with the robot before uploading code to it.
-            </p>
-            <p>
-              In order to interpret the final SUS score, we will rely on the work of Bangor, Kortum, and Miller[3] who present a mapping from SUS scores to the letter grade scale and an adjective rating scale as shown in Figure 8. Based on this scale, we see that the final usability score of 91.3 falls well into the ’acceptable’ region, with a letter grade score of ’A’, and an adjective rating of ’excellent’. From this we see that the final version of the web app developed for this project has, by all indications, an ’excellent’ usability score and should serve the target users well.
+              The web app developed for this project has been evaluated based on its usability and whether or not it meets the initial requirements. The System Usability Scale(SUS) was used to determine the usability of the web app.
             </p>
             <hr>
 
@@ -148,20 +132,6 @@
               <li><a href="files/Survey_Muhummad.pdf" target="_blank">Survey: Supporting Web App</a></li>
               <!-- TODO: replace with link to actual final paper -->
               <li><a href="#" target="_blank">Final paper: Supporting Web App - Muhummad</a></li>
-            </ul>
-            <hr>
-
-            <h5 class="header col s12 light">References</h5>
-            <ul class="references-list">
-              <li>
-                [1] - B. Fagin and L. Merkle. Measuring the effectiveness of robots in teaching computer science. In ACM SIGCSE Bulletin, volume 35, pages 307–311. ACM, 2003.
-              </li>
-              <li>
-                [2] - J. Brooke et al. Sus-a quick and dirty usability scale. Usability Evaluation in Industry, 189(194):4–7, 1996.
-              </li>
-              <li>
-                [3] - A. Bangor, P. Kortum, and J. Miller. Determining what individual sus scores mean: Adding an adjective rating scale. Journal of usability studies, 4(3):114–123, 2009.
-              </li>
             </ul>
           </div>
         </div>
